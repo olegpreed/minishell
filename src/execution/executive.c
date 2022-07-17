@@ -1,27 +1,13 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   executive.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: preed <preed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 17:43:40 by preed             #+#    #+#             */
-/*   Updated: 2022/03/22 20:26:00 by preed            ###   ########.fr       */
+/*   Created: 2022/06/04 20:01:02 by lgarrosh          #+#    #+#             */
+/*   Updated: 2022/07/16 15:56:08 by lgarrosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-
-//counts symbols in line
-//does not count the last null-terminating character
-size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
-}
+#include "minishell.h"

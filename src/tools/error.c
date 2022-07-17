@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: preed <preed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 17:43:40 by preed             #+#    #+#             */
-/*   Updated: 2022/03/22 20:26:00 by preed            ###   ########.fr       */
+/*   Created: 2022/06/18 02:12:27 by arman             #+#    #+#             */
+/*   Updated: 2022/07/03 15:47:45 by lgarrosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "minishell.h"
 
-//counts symbols in line
-//does not count the last null-terminating character
-size_t	ft_strlen(const char *s)
+void	ft_error(const char *err)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
+	write(2, "Error: ", 8);
+	write(2, err, ft_strlen(err));
 }

@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: preed <preed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 17:43:40 by preed             #+#    #+#             */
-/*   Updated: 2022/03/22 20:26:00 by preed            ###   ########.fr       */
+/*   Created: 2022/06/25 17:15:13 by lgarrosh          #+#    #+#             */
+/*   Updated: 2022/06/25 17:28:48 by lgarrosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "../includes/pipex_bonus.h"
 
-//counts symbols in line
-//does not count the last null-terminating character
-size_t	ft_strlen(const char *s)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-		i++;
-	return (i);
+	while ((*s1 || *s2) && (n > 0))
+	{
+		if (*s1 != *s2)
+			return ((unsigned char)*s1 - (unsigned char)*s2);
+		s1++;
+		s2++;
+		n--;
+	}
+	return (0);
 }

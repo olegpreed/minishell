@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: preed <preed@student.42.fr>                +#+  +:+       +#+         #
+#    By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/07 20:16:46 by preed             #+#    #+#              #
-#    Updated: 2022/03/28 18:51:08 by preed            ###   ########.fr        #
+#    Updated: 2022/06/15 14:45:50 by lgarrosh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ OBJS = $(addprefix $(OBJS_DIR),$(SRCS:%.c=%.o))
 
 OBJS_B =  $(addprefix $(OBJS_DIR),$(SRCS_B:%.c=%.o))
 
-CC = gcc
+CC = cc
 
 RM = rm -rvf
 

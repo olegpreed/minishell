@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: preed <preed@student.42.fr>                +#+  +:+       +#+        */
+/*   By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 17:43:40 by preed             #+#    #+#             */
-/*   Updated: 2022/03/22 20:26:00 by preed            ###   ########.fr       */
+/*   Created: 2022/06/25 17:15:01 by lgarrosh          #+#    #+#             */
+/*   Updated: 2022/06/25 17:28:40 by lgarrosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "../includes/pipex_bonus.h"
 
-//counts symbols in line
-//does not count the last null-terminating character
-size_t	ft_strlen(const char *s)
+char	*ft_strdup(const char *src)
 {
+	char	*cp;
 	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
+	cp = (char *)malloc(ft_strlen(src) + 1);
+	if (!cp)
+		return (NULL);
+	while (src[i])
+	{
+		cp[i] = src[i];
 		i++;
-	return (i);
+	}
+	cp[i] = '\0';
+	return (cp);
 }
