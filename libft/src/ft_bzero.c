@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // puts '\0' in the first n bytes in s string
 void	ft_bzero(void *s, size_t n)

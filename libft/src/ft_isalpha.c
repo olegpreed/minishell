@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 // checks if it's a letter or not
 int	ft_isalpha(int c)
 {

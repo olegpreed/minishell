@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // same as strchr except it doesn't stop after '/0'
 // searches not more than n bytes

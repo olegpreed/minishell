@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 // finds the first c symbol in string s
 // c can be '\0'. returns its address
 char	*ft_strchr(const char *s, int c)

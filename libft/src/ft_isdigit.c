@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 // checks if it's a number or not
 int	ft_isdigit(int c)
 {

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // compares the first different symbol in s1 and s2
 // compares not more than n bytes and not after '\0'

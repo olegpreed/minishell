@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 // checks if symbol is blank or not
 int	ft_isprint(int c)
 {

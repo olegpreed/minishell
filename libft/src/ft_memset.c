@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 // changes the first len symbols to c
 void	*ft_memset(void *b, int c, size_t len)
