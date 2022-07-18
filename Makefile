@@ -6,14 +6,20 @@
 #    By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 17:42:40 by preed             #+#    #+#              #
-#    Updated: 2022/07/16 15:55:08 by lgarrosh         ###   ########.fr        #
+#    Updated: 2022/07/18 17:04:26 by lgarrosh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= minishell
 
-CC			= cc
-FLAGS		= -Wall -Wextra -Werror -lreadline
+
+
+RL_DIR		= /Users/$(USER)/.brew/Cellar/readline/8.1.?
+
+CC			= gcc
+# FLAGS		= -g -Wall -Wextra -I $(RL_DIR)/include/ -lreadline -L $(RL_DIR)/lib/
+CFLAGS		= -Wall -Wextra -Werror -I $(RL_DIR)/include/
+FLAGS		=  $(CFLAGS) -lreadline -L $(RL_DIR)/lib/
 
 LIBFT		= libft/libft.a
 PIPEX		= pipex/pipex.a
@@ -37,12 +43,12 @@ ENV			= env.c env_oper.c
 
 EXEC		= executive.c
 
-TOOLS		= free.c init.c error.c
+TOOLS		= free.c init.c error.c ft_readline.c
 
 OBJ_F 		=	$(subst $(SRC_D),$(OBJ_D),$(SRC_F:%.c=%.o)) 
 
 $(OBJ_D)%.o: $(SRC_D)%.c
-	$(CC) $(FLAGS) -c $< -o $@  -I$(INC) -I$(LIB_DIR)$(INC) -I$(PIP_DIR)$(INC)
+	$(CC) $(CFLAGS) -c $< -o $@  -I$(INC) -I$(LIB_DIR)$(INC) -I$(PIP_DIR)$(INC) 
 
 .PHONY: all clean fclean re
 
