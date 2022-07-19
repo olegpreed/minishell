@@ -6,14 +6,8 @@
 /*   By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 02:12:27 by arman             #+#    #+#             */
-/*   Updated: 2022/07/03 15:47:45 by lgarrosh         ###   ########.fr       */
+/*   Updated: 2022/07/19 15:22:19 by lgarrosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-void	ft_error(const char *err)
-{
-	write(2, "Error: ", 8);
-	write(2, err, ft_strlen(err));
-}
