@@ -6,21 +6,21 @@
 /*   By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:37:38 by lgarrosh          #+#    #+#             */
-/*   Updated: 2022/07/19 16:14:13 by lgarrosh         ###   ########.fr       */
+/*   Updated: 2022/07/19 18:24:19 by lgarrosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
 
-# include <readline/readline.h>
-# include <readline/history.h>
 # include <sys/types.h>
 # include <sys/stat.h>
 # include <signal.h>
 # include <string.h>
 # include <stdio.h>
 # include <fcntl.h>
+# include <readline/readline.h>
+# include <readline/history.h>
 # include "libft.h"
 # include "struct.h"
 
