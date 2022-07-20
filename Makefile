@@ -16,7 +16,7 @@ NAME		= minishell
 # RL_DIR		= /Users/$(USER)/.brew/Cellar/readline/8.1.?
 
 # for ubuntu
-RL_DIR		= /usr/local/readline/8.1
+RL_DIR		= /usr/local
 
 CC			= cc
 # for mac
@@ -24,8 +24,8 @@ CC			= cc
 # FLAGS		=  $(CFLAGS) -lreadline -L $(RL_DIR)/lib/
 
 # for ubuntu
-CFLAGS		= -Wall -Wextra -Werror -I $(RL_DIR)/include/
-FLAGS		=  $(CFLAGS) -lreadline -L $(RL_DIR)/lib/
+CFLAGS		= -Wall -Wextra -Werror
+READ_LIB	= -L$(RL_DIR)/lib/ -I$(RL_DIR)/include/ -lreadline
 
 LIBFT		= libft/libft.a
 PIPEX		= pipex/pipex.a
@@ -64,8 +64,14 @@ $(OBJ_D):
 		@mkdir -p $@
 		@mkdir -p $(addprefix $@/, main env execution tools)
 
+
+#for mac
+# $(NAME): $(OBJ_D) $(OBJ_F) $(LIBFT) $(PIPEX) $(HEADERS) Makefile
+# 	$(CC) $(FLAGS) $(OBJ_F) -o $(NAME) $(LIBFT) $(PIPEX) -I$(INC)
+
+#for ubuntu
 $(NAME): $(OBJ_D) $(OBJ_F) $(LIBFT) $(PIPEX) $(HEADERS) Makefile
-	$(CC) $(FLAGS) $(OBJ_F) -o $(NAME) $(LIBFT) $(PIPEX) -I$(INC)
+	$(CC) $(CLAGS) $(OBJ_F) -o $(NAME) $(LIBFT) $(READ_LIB) $(PIPEX) -I$(INC)
 
 makelib:
 	@make -C $(LIB_DIR) bonus --no-print-directory
