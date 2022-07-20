@@ -12,10 +12,18 @@
 
 NAME		= minishell
 
+# for mac
+# RL_DIR		= /Users/$(USER)/.brew/Cellar/readline/8.1.?
 
-RL_DIR		= /Users/$(USER)/.brew/Cellar/readline/8.1.?
+# for ubuntu
+RL_DIR		= /usr/local/readline/8.1
 
 CC			= cc
+# for mac
+# CFLAGS		= -Wall -Wextra -Werror -I $(RL_DIR)/include/
+# FLAGS		=  $(CFLAGS) -lreadline -L $(RL_DIR)/lib/
+
+# for ubuntu
 CFLAGS		= -Wall -Wextra -Werror -I $(RL_DIR)/include/
 FLAGS		=  $(CFLAGS) -lreadline -L $(RL_DIR)/lib/
 
