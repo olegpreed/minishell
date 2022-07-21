@@ -6,7 +6,7 @@
 #    By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 17:42:40 by preed             #+#    #+#              #
-#    Updated: 2022/07/19 15:19:19 by lgarrosh         ###   ########.fr        #
+#    Updated: 2022/07/21 16:21:38 by lgarrosh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,7 +49,7 @@ ENV			= env.c env_oper.c
 
 EXEC		= executive.c
 
-TOOLS		= free.c error.c ft_readline.c
+TOOLS		= free.c error.c ft_readline.c init.c other.c
 
 OBJ_F 		=	$(subst $(SRC_D),$(OBJ_D),$(SRC_F:%.c=%.o)) 
 
