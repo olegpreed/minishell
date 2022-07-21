@@ -6,26 +6,26 @@
 #    By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 17:42:40 by preed             #+#    #+#              #
-#    Updated: 2022/07/19 15:19:19 by lgarrosh         ###   ########.fr        #
+#    Updated: 2022/07/21 16:21:38 by lgarrosh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= minishell
 
 # for mac
-# RL_DIR		= /Users/$(USER)/.brew/Cellar/readline/8.1.?
+RL_DIR		= /Users/$(USER)/.brew/Cellar/readline/8.1.?
 
 # for ubuntu
-RL_DIR		= /usr/local/readline/8.1
+# RL_DIR		= /usr/local/readline/8.1
 
 CC			= cc
 # for mac
-# CFLAGS		= -Wall -Wextra -Werror -I $(RL_DIR)/include/
-# FLAGS		=  $(CFLAGS) -lreadline -L $(RL_DIR)/lib/
-
-# for ubuntu
 CFLAGS		= -Wall -Wextra -Werror -I $(RL_DIR)/include/
 FLAGS		=  $(CFLAGS) -lreadline -L $(RL_DIR)/lib/
+
+# for ubuntu
+# CFLAGS		= -Wall -Wextra -Werror -I $(RL_DIR)/include/
+# FLAGS		=  $(CFLAGS) -lreadline -L $(RL_DIR)/lib/
 
 LIBFT		= libft/libft.a
 PIPEX		= pipex/pipex.a
@@ -49,7 +49,7 @@ ENV			= env.c env_oper.c
 
 EXEC		= executive.c
 
-TOOLS		= free.c error.c ft_readline.c
+TOOLS		= free.c error.c ft_readline.c init.c other.c
 
 OBJ_F 		=	$(subst $(SRC_D),$(OBJ_D),$(SRC_F:%.c=%.o)) 
 
