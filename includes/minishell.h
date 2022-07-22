@@ -6,7 +6,7 @@
 /*   By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 14:37:38 by lgarrosh          #+#    #+#             */
-/*   Updated: 2022/07/21 16:24:07 by lgarrosh         ###   ########.fr       */
+/*   Updated: 2022/07/22 17:09:30 by lgarrosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@
 # include <readline/history.h>
 # include "libft.h"
 # include "struct.h"
+
+# define PATH_MAX 1024
+
+int		g_exit;
 
 // pipex
 int		pipex(int argc, char **argv, t_pipex *pip);
@@ -42,5 +46,11 @@ t_llist	*llist_new(t_llist_key_comparator_ptr key_cmpr, \
 int		ft_error(int ret, const char *err);
 //other
 int		ft_strslice(const char *s, const char *delim, char **a, char **b);
+int		ft_is_valid_id(const char *s);
+//builtin
+int		ft_pwd(t_llist *args, t_info *info);
+int		ft_env(t_llist *args, t_info *info);
+//list
+int		llist_del(t_llist *list, const void *key);
 
 #endif

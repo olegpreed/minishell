@@ -6,7 +6,7 @@
 /*   By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:20:45 by lgarrosh          #+#    #+#             */
-/*   Updated: 2022/07/21 16:26:14 by lgarrosh         ###   ########.fr       */
+/*   Updated: 2022/07/22 17:00:51 by lgarrosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,27 @@ int	ft_strslice(const char *s, const char *delim, char **a, char **b)
 		return (0);
 	free(*a);
 	return (1);
+}
+
+int	ft_is_valid_id(const char *s)
+{
+	int		i;
+	char	b;
+
+	if (s == NULL || *s == '\0')
+		return (0);
+	b = 0;
+	i = 0;
+	while (s[i])
+	{
+		if (i == 0 && (s[i] == '_'
+				|| (s[i] >= 'a' && s[i] <= 'z')
+				|| (s[i] >= 'A' && s[i] <= 'Z')))
+			b = 1;
+		if (s[i] == '_' || ft_isalnum(s[i]))
+			++i;
+		else
+			return (0);
+	}
+	return (b);
 }

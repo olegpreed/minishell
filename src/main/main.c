@@ -4,6 +4,7 @@ int main(int argc, char **argv, char **envp)
 {
 	t_llist		*list;
 	t_ll_elem	*el;
+	t_info		*g;
 	char		a;
 	char		*prom;
 	char		*line;
@@ -11,6 +12,7 @@ int main(int argc, char **argv, char **envp)
 	(void)argc;
 	(void)argv;
 	line = &a;
+	g = NULL;
 	prom = "minish:$ ";
 	signal(SIGINT, handler);
 	while(line)
@@ -26,5 +28,6 @@ int main(int argc, char **argv, char **envp)
 		printf("%s\n", (char *)el->key);
 		el = el->next;
 	}
+	ft_pwd(list, g);
 	return (0);
 }

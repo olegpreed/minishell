@@ -6,26 +6,26 @@
 #    By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/06 17:42:40 by preed             #+#    #+#              #
-#    Updated: 2022/07/21 16:21:38 by lgarrosh         ###   ########.fr        #
+#    Updated: 2022/07/22 17:05:41 by lgarrosh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= minishell
 
 # for mac
-# RL_DIR		= /Users/$(USER)/.brew/Cellar/readline/8.1.?
+RL_DIR		= /Users/$(USER)/.brew/Cellar/readline/8.1.?
 
 # for ubuntu
-RL_DIR		= /usr/local
+# RL_DIR		= /usr/local
 
 CC			= cc
 # for mac
-# CFLAGS		= -Wall -Wextra -Werror -I $(RL_DIR)/include/
-# FLAGS		=  $(CFLAGS) -lreadline -L $(RL_DIR)/lib/
+CFLAGS		= -Wall -Wextra -Werror -I $(RL_DIR)/include/
+FLAGS		=  $(CFLAGS) -lreadline -L $(RL_DIR)/lib/
 
 # for ubuntu
-CFLAGS		= -Wall -Wextra -Werror
-READ_LIB	= -L$(RL_DIR)/lib/ -I$(RL_DIR)/include/ -lreadline
+# CFLAGS		= -Wall -Wextra -Werror
+# READ_LIB	= -L$(RL_DIR)/lib/ -I$(RL_DIR)/include/ -lreadline
 
 LIBFT		= libft/libft.a
 PIPEX		= pipex/pipex.a
@@ -47,9 +47,9 @@ MAIN		= main.c
 
 ENV			= env.c env_oper.c
 
-EXEC		= executive.c
+EXEC		= executive.c builtin.c
 
-TOOLS		= free.c error.c ft_readline.c init.c other.c
+TOOLS		= free.c error.c ft_readline.c init.c other.c list.c
 
 OBJ_F 		=	$(subst $(SRC_D),$(OBJ_D),$(SRC_F:%.c=%.o)) 
 
@@ -66,12 +66,12 @@ $(OBJ_D):
 
 
 #for mac
-# $(NAME): $(OBJ_D) $(OBJ_F) $(LIBFT) $(PIPEX) $(HEADERS) Makefile
-# 	$(CC) $(FLAGS) $(OBJ_F) -o $(NAME) $(LIBFT) $(PIPEX) -I$(INC)
+$(NAME): $(OBJ_D) $(OBJ_F) $(LIBFT) $(PIPEX) $(HEADERS) Makefile
+	$(CC) $(FLAGS) $(OBJ_F) -o $(NAME) $(LIBFT) $(PIPEX) -I$(INC)
 
 #for ubuntu
-$(NAME): $(OBJ_D) $(OBJ_F) $(LIBFT) $(PIPEX) $(HEADERS) Makefile
-	$(CC) $(CLAGS) $(OBJ_F) -o $(NAME) $(LIBFT) $(READ_LIB) $(PIPEX) -I$(INC)
+# $(NAME): $(OBJ_D) $(OBJ_F) $(LIBFT) $(PIPEX) $(HEADERS) Makefile
+# 	$(CC) $(CLAGS) $(OBJ_F) -o $(NAME) $(LIBFT) $(READ_LIB) $(PIPEX) -I$(INC)
 
 makelib:
 	@make -C $(LIB_DIR) bonus --no-print-directory
