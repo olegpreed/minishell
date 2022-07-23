@@ -2,12 +2,13 @@
 # define STRUCT_H
 
 # include <unistd.h>
+
 # define ERR_MALLOC "failed to allocate memory"
+# define PROM "minish:$ "
 
-
-typedef int (*	t_llist_key_comparator_ptr)(const void	*k1,const void *k2);
-typedef void (*	t_llist_key_destructor_ptr)(void	*key);
-typedef void (*	t_llist_val_destructor_ptr)(void	*val);
+typedef int		(* t_llist_key_comparator_ptr)(const void	*k1,const void *k2);
+typedef void	(*	t_llist_key_destructor_ptr)(void	*key);
+typedef void	(*	t_llist_val_destructor_ptr)(void	*val);
 
 typedef struct s_llist_element
 {

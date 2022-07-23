@@ -6,7 +6,7 @@
 /*   By: lgarrosh <lgarrosh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/22 15:21:37 by lgarrosh          #+#    #+#             */
-/*   Updated: 2022/07/22 17:10:14 by lgarrosh         ###   ########.fr       */
+/*   Updated: 2022/07/23 16:09:29 by lgarrosh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,4 +77,12 @@ int	ft_unset(t_llist *args, t_info *info)
 	}
 	info->envp_f = 1;
 	return (0);
+}
+
+void	not_valid_handler(char *a, char *b)
+{
+	g_exit = 1;
+	free(a);
+	free(b);
+	write(STDERR_FILENO, "minishell: export: not valid\n", 30);
 }
